@@ -6,6 +6,7 @@ const session = require('express-session');
 const parseurl = require('parseurl');
 const expressValidator = require('express-validator');
 const routes = require('./route/user'); //everything required everywhere else needs to be in app.js
+const models = require('./models');
 
 const app = express();
 
@@ -28,6 +29,26 @@ app.use(session({
 
 app.use('/users', require('./route/user')); //requires the var to pass the destination
 // app.use('/signup', routes);
+
+
+
+
+
+const Userinfo = models.user.build({
+    Username: req.body.username,
+    Password: req.body.password
+
+  });
+  Userinfo.save().then //I AM HERE COME BACK HERE
+  //NDSKFNKSDANFKANSDKFNDSKAFNKSADNFKSADNKGNDSK
+  //skdnflsndlgdlskfnlknsdgklndkslnfklnsgkldnsfn
+  //dklsnklnsgklndsklfnklnsdklganksldgndsk;ng;
+  //pls come back
+
+
+
+
+
 
 app.listen(3000, function() {
   console.log('working');
